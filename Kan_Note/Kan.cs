@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using Syncfusion.Windows.Forms.Tools;
 
 namespace Kan_Note
 {
@@ -32,6 +33,8 @@ namespace Kan_Note
                 MaterialListBoxItem ite = new MaterialListBoxItem();
                 ite.Text = "New Note";
                 kanListNote.Items.Add(ite);
+               
+               
             }
             catch
             {
