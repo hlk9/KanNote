@@ -55,10 +55,11 @@ namespace Kan_Note
             try
             {
                 Num += 1;
-                MaterialListBoxItem ite = new MaterialListBoxItem();                
+                MaterialListBoxItem ite = new MaterialListBoxItem();                   
                 ite.SecondaryText = System.DateTime.Now.ToString();
                 ite.Text = "New Tab[" + Num + "]";
                 kanListNote.Items.Add(ite);
+                
                 TabPageAdv tab = new TabPageAdv();
                 tab.Text = "New Tab["+Num+"]";
                 MaterialMultiLineTextBox2 rangetext = new MaterialMultiLineTextBox2();
@@ -70,6 +71,7 @@ namespace Kan_Note
                 rangetext.Dock = DockStyle.Fill;
                 tabcontrolKan.TabPages.Add(tab);
                 tab.Closed += Tab_Closed;
+                
 
               
             }
@@ -81,18 +83,22 @@ namespace Kan_Note
         private TabPageAdv TabHT;
         private void Tab_Closed(object sender, EventArgs e)
         {
-            //how to?
-           foreach(MaterialListBoxItem ite2m in kanListNote.Items)
+            bool contain = false;
+            //Collection was modified; enumeration operation may not execute.'--- ToList()
+            foreach (var item in kanListNote.Items.ToList())
             {
-              foreach(TabPageAdv item2 in tabcontrolKan.TabPages)
+               foreach(TabPageAdv item2 in tabcontrolKan.TabPages)
                 {
-                    if (ite2m.Text != item2.Text)
+                    if (item.Text == item2.Text)
                     {
-                        kanListNote.Items.Remove(ite2m);
+                        contain = true;
+                        break;
                     }
-                    
+                    else contain = false;
                 }
+                if (contain == false) kanListNote.Items.Remove(item);
             }
+          
         }
 
         private void kanListNote_MouseDown(object sender, MouseEventArgs e)
@@ -135,6 +141,16 @@ namespace Kan_Note
 
                 }
                 kanListNote.Items.Remove(kanListNote.SelectedItem);
+            }
+        }
+
+        private void renameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RenameDialog a = new RenameDialog();
+            if(a.ShowDialog()==DialogResult.OK)
+            {
+                kanListNote.SelectedItem.Text = a.Name;
+                tabcontrolKan.SelectedTab.Text = a.Name;
             }
         }
     }
