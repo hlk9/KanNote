@@ -20,7 +20,7 @@ namespace Kan_Note
             InitializeComponent();
             this.Load += Form1_Load;
         }
-
+        private int Num;
         private void Form1_Load(object sender, EventArgs e)
         {
             
@@ -30,10 +30,20 @@ namespace Kan_Note
         {
             try
             {
+                Num += 1;
                 MaterialListBoxItem ite = new MaterialListBoxItem();
-                ite.Text = "New Note";
+                ite.Text = "New Tab[" + Num + "]";
                 kanListNote.Items.Add(ite);
-               
+                TabPageAdv tab = new TabPageAdv();
+                tab.Text = "New Tab["+Num+"]";
+                MaterialMultiLineTextBox2 rangetext = new MaterialMultiLineTextBox2();
+                //set font cho TextBox
+                Font kanFont = new Font("CascadiaCode",14, FontStyle.Regular);
+                
+                rangetext.Font = kanFont;
+                tab.Controls.Add(rangetext);
+                rangetext.Dock = DockStyle.Fill;
+                tabcontrolKan.TabPages.Add(tab);
                
             }
             catch
