@@ -57,7 +57,7 @@ namespace Kan_Note
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(936, 469);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1597, 645);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // kanListNote
@@ -73,7 +73,7 @@ namespace Kan_Note
             this.kanListNote.Name = "kanListNote";
             this.kanListNote.SelectedIndex = -1;
             this.kanListNote.SelectedItem = null;
-            this.kanListNote.Size = new System.Drawing.Size(147, 463);
+            this.kanListNote.Size = new System.Drawing.Size(256, 639);
             this.kanListNote.TabIndex = 0;
             this.kanListNote.MouseDown += new System.Windows.Forms.MouseEventHandler(this.kanListNote_MouseDown);
             // 
@@ -83,33 +83,33 @@ namespace Kan_Note
             this.newNoteToolStripMenuItem,
             this.editNoteToolStripMenuItem});
             this.kanMenu.Name = "kanMenu";
-            this.kanMenu.Size = new System.Drawing.Size(128, 48);
+            this.kanMenu.Size = new System.Drawing.Size(181, 70);
             // 
             // newNoteToolStripMenuItem
             // 
             this.newNoteToolStripMenuItem.Name = "newNoteToolStripMenuItem";
-            this.newNoteToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.newNoteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newNoteToolStripMenuItem.Text = "New Note";
             this.newNoteToolStripMenuItem.Click += new System.EventHandler(this.newNoteToolStripMenuItem_Click);
             // 
             // editNoteToolStripMenuItem
             // 
             this.editNoteToolStripMenuItem.Name = "editNoteToolStripMenuItem";
-            this.editNoteToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.editNoteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editNoteToolStripMenuItem.Text = "Edit Note";
             // 
             // tabcontrolKan
             // 
             this.tabcontrolKan.ActiveTabFont = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.tabcontrolKan.BeforeTouchSize = new System.Drawing.Size(777, 463);
+            this.tabcontrolKan.BeforeTouchSize = new System.Drawing.Size(1329, 639);
             this.tabcontrolKan.Controls.Add(this.tabPageAdv1);
             this.tabcontrolKan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabcontrolKan.FocusOnTabClick = false;
             this.tabcontrolKan.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tabcontrolKan.ItemSize = new System.Drawing.Size(37, 32);
-            this.tabcontrolKan.Location = new System.Drawing.Point(156, 3);
+            this.tabcontrolKan.Location = new System.Drawing.Point(265, 3);
             this.tabcontrolKan.Name = "tabcontrolKan";
-            this.tabcontrolKan.Size = new System.Drawing.Size(777, 463);
+            this.tabcontrolKan.Size = new System.Drawing.Size(1329, 639);
             this.tabcontrolKan.TabIndex = 1;
             this.tabcontrolKan.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRendererOffice2016Colorful);
             this.tabcontrolKan.ThemeName = "TabRendererOffice2016Colorful";
@@ -125,7 +125,7 @@ namespace Kan_Note
             this.tabPageAdv1.Location = new System.Drawing.Point(3, 34);
             this.tabPageAdv1.Name = "tabPageAdv1";
             this.tabPageAdv1.ShowCloseButton = true;
-            this.tabPageAdv1.Size = new System.Drawing.Size(770, 425);
+            this.tabPageAdv1.Size = new System.Drawing.Size(1322, 601);
             this.tabPageAdv1.TabIndex = 1;
             this.tabPageAdv1.Text = "Note";
             this.tabPageAdv1.ThemesEnabled = true;
@@ -151,7 +151,7 @@ namespace Kan_Note
             this.materialMultiLineTextBox21.SelectionLength = 0;
             this.materialMultiLineTextBox21.SelectionStart = 0;
             this.materialMultiLineTextBox21.ShortcutsEnabled = true;
-            this.materialMultiLineTextBox21.Size = new System.Drawing.Size(770, 425);
+            this.materialMultiLineTextBox21.Size = new System.Drawing.Size(1322, 601);
             this.materialMultiLineTextBox21.TabIndex = 0;
             this.materialMultiLineTextBox21.TabStop = false;
             this.materialMultiLineTextBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -161,7 +161,7 @@ namespace Kan_Note
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(942, 536);
+            this.ClientSize = new System.Drawing.Size(1603, 712);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "Kan";
             this.Text = "Kan Note";
