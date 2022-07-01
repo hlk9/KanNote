@@ -47,8 +47,8 @@ namespace Kan_Note
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.45299F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 83.54701F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 15.15341F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 84.84659F));
             this.tableLayoutPanel1.Controls.Add(this.kanListNote, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.tabcontrolKan, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -72,7 +72,7 @@ namespace Kan_Note
             this.kanListNote.Name = "kanListNote";
             this.kanListNote.SelectedIndex = -1;
             this.kanListNote.SelectedItem = null;
-            this.kanListNote.Size = new System.Drawing.Size(256, 639);
+            this.kanListNote.Size = new System.Drawing.Size(236, 639);
             this.kanListNote.Style = MaterialSkin.Controls.MaterialListBox.ListBoxStyle.TwoLine;
             this.kanListNote.TabIndex = 0;
             this.kanListNote.SelectedValueChanged += new MaterialSkin.Controls.MaterialListBox.SelectedValueEventHandler(this.kanListNote_SelectedValueChanged);
@@ -87,7 +87,7 @@ namespace Kan_Note
             this.exportToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.kanMenu.Name = "kanMenu";
-            this.kanMenu.Size = new System.Drawing.Size(184, 114);
+            this.kanMenu.Size = new System.Drawing.Size(184, 136);
             // 
             // newNoteToolStripMenuItem
             // 
@@ -107,6 +107,7 @@ namespace Kan_Note
             this.renameToolStripMenuItem.Name = "renameToolStripMenuItem";
             this.renameToolStripMenuItem.Size = new System.Drawing.Size(183, 22);
             this.renameToolStripMenuItem.Text = "Rename";
+            this.renameToolStripMenuItem.Click += new System.EventHandler(this.renameToolStripMenuItem_Click);
             // 
             // exportToolStripMenuItem
             // 
@@ -124,18 +125,18 @@ namespace Kan_Note
             // tabcontrolKan
             // 
             this.tabcontrolKan.ActiveTabFont = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabcontrolKan.BeforeTouchSize = new System.Drawing.Size(1329, 639);
+            this.tabcontrolKan.BeforeTouchSize = new System.Drawing.Size(1349, 639);
             this.tabcontrolKan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabcontrolKan.FocusOnTabClick = false;
             this.tabcontrolKan.Font = new System.Drawing.Font("Cascadia Code", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.tabcontrolKan.ItemSize = new System.Drawing.Size(37, 32);
-            this.tabcontrolKan.Location = new System.Drawing.Point(265, 3);
+            this.tabcontrolKan.Location = new System.Drawing.Point(245, 3);
             this.tabcontrolKan.Multiline = true;
             this.tabcontrolKan.Name = "tabcontrolKan";
             this.tabcontrolKan.ShowCloseButtonForActiveTabOnly = true;
             this.tabcontrolKan.ShowDefaultContextMenu = true;
             this.tabcontrolKan.ShowTabCloseButton = true;
-            this.tabcontrolKan.Size = new System.Drawing.Size(1329, 639);
+            this.tabcontrolKan.Size = new System.Drawing.Size(1349, 639);
             this.tabcontrolKan.SizeMode = Syncfusion.Windows.Forms.Tools.TabSizeMode.FillToRight;
             this.tabcontrolKan.TabIndex = 1;
             this.tabcontrolKan.TabStyle = typeof(Syncfusion.Windows.Forms.Tools.TabRendererOffice2016Colorful);
