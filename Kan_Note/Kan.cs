@@ -39,11 +39,12 @@ namespace Kan_Note
                 MaterialMultiLineTextBox2 rangetext = new MaterialMultiLineTextBox2();
                 //set font cho TextBox
                 Font kanFont = new Font("CascadiaCode",14, FontStyle.Regular);
-                
+                rangetext.Hint = "Write note into me...";
                 rangetext.Font = kanFont;
                 tab.Controls.Add(rangetext);
                 rangetext.Dock = DockStyle.Fill;
                 tabcontrolKan.TabPages.Add(tab);
+                
                
             }
             catch
@@ -57,6 +58,41 @@ namespace Kan_Note
             if (e.Button == MouseButtons.Right&&kanListNote.SelectedItem!=null)
             {
                 kanMenu.Show();
+            }
+           
+        }
+
+        private void kanListNote_SelectedValueChanged(object sender, MaterialListBoxItem selectedItem)
+        {
+           foreach(TabPageAdv item in tabcontrolKan.TabPages)
+            {
+             
+                if (item.Text == selectedItem.Text)
+                {
+                    tabcontrolKan.SelectedTab = item;
+                    break;
+                }
+                  
+                
+            }
+        }
+
+        private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           if (kanListNote.SelectedItem != null)
+            {
+                foreach (TabPageAdv item in tabcontrolKan.TabPages)
+                {
+
+                    if (item.Text == kanListNote.SelectedItem.Text)
+                    {
+                        tabcontrolKan.TabPages.Remove(tabcontrolKan.SelectedTab);
+                        break;
+                    }
+
+
+                }
+                kanListNote.Items.Remove(kanListNote.SelectedItem);
             }
         }
     }
