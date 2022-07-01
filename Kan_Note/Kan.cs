@@ -19,7 +19,31 @@ namespace Kan_Note
         {
             InitializeComponent();
             this.Load += Form1_Load;
+            tabcontrolKan.SelectedIndexChanged += TabcontrolKan_SelectedIndexChanged;
         }
+
+        private void TabcontrolKan_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+               
+                foreach(var item in kanListNote.Items)
+                {
+                    if(item.Text== tabcontrolKan.SelectedTab.Text)
+                    {
+                        TabHT = tabcontrolKan.SelectedTab;
+                        kanListNote.SelectedItem = item;
+                        break;
+                    }
+                }
+            }
+            catch
+            {
+                TabHT = null;
+            }
+           
+        }
+
         private int Num;
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -31,7 +55,8 @@ namespace Kan_Note
             try
             {
                 Num += 1;
-                MaterialListBoxItem ite = new MaterialListBoxItem();
+                MaterialListBoxItem ite = new MaterialListBoxItem();                
+                ite.SecondaryText = System.DateTime.Now.ToString();
                 ite.Text = "New Tab[" + Num + "]";
                 kanListNote.Items.Add(ite);
                 TabPageAdv tab = new TabPageAdv();
@@ -44,12 +69,29 @@ namespace Kan_Note
                 tab.Controls.Add(rangetext);
                 rangetext.Dock = DockStyle.Fill;
                 tabcontrolKan.TabPages.Add(tab);
-                
-               
+                tab.Closed += Tab_Closed;
+
+              
             }
             catch
             {
 
+            }
+        }
+        private TabPageAdv TabHT;
+        private void Tab_Closed(object sender, EventArgs e)
+        {
+            //how to?
+           foreach(MaterialListBoxItem ite2m in kanListNote.Items)
+            {
+              foreach(TabPageAdv item2 in tabcontrolKan.TabPages)
+                {
+                    if (ite2m.Text != item2.Text)
+                    {
+                        kanListNote.Items.Remove(ite2m);
+                    }
+                    
+                }
             }
         }
 
@@ -70,6 +112,7 @@ namespace Kan_Note
                 if (item.Text == selectedItem.Text)
                 {
                     tabcontrolKan.SelectedTab = item;
+                    TabHT = item;
                     break;
                 }
                   
@@ -89,7 +132,6 @@ namespace Kan_Note
                         tabcontrolKan.TabPages.Remove(tabcontrolKan.SelectedTab);
                         break;
                     }
-
 
                 }
                 kanListNote.Items.Remove(kanListNote.SelectedItem);
