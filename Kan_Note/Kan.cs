@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using Syncfusion.Windows.Forms.Tools;
+using System.IO;
+using System.Data.OleDb;
 
 namespace Kan_Note
 {
@@ -47,7 +49,15 @@ namespace Kan_Note
         private int Num;
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
+            if (Directory.Exists(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\KanNote"))
+            {
+
+            }
+            else
+            {
+                Directory.CreateDirectory(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\KanNote");
+            }
         }
 
         private void newNoteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -149,8 +159,14 @@ namespace Kan_Note
             RenameDialog a = new RenameDialog();
             if(a.ShowDialog()==DialogResult.OK)
             {
-                kanListNote.SelectedItem.Text = a.Name;
-                tabcontrolKan.SelectedTab.Text = a.Name;
+                try
+                {
+                    kanListNote.SelectedItem.Text = a.Name;
+                    tabcontrolKan.SelectedTab.Text = a.Name;
+                }
+                catch
+                { }
+               
             }
         }
     }
